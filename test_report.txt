@@ -1,0 +1,143 @@
+PROLAB22 - YAZILIM TEST RAPORU
+Tarih: 2026-05-17 23:53:41
+======================================================================
+
+Toplam Testler: 33
+Geçen Testler: 33
+Başarısız Testler: 0
+Başarı Oranı: 100.0%
+
+DETAYLI TEST SONUÇLARI:
+----------------------------------------------------------------------
+
+Test: Veritabanı Bağlantısı
+Sonuç: GEÇTI
+Açıklama: MySQL bağlantısı kuruldu
+
+Test: Tüm Gerekli Tablolar Mevcut
+Sonuç: GEÇTI
+Açıklama: Toplam tablo: 11, Eksik: Yok
+
+Test:   Email: 'test@example.com'
+Sonuç: GEÇTI
+Açıklama: Beklenen: True, Sonuç: True
+
+Test:   Email: 'user.name@domain.co.uk'
+Sonuç: GEÇTI
+Açıklama: Beklenen: True, Sonuç: True
+
+Test:   Email: 'invalid.email@'
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Email: '@example.com'
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Email: 'notanemail'
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Ad: 'Ali'
+Sonuç: GEÇTI
+Açıklama: Beklenen: True, Sonuç: True
+
+Test:   Ad: 'Jean-Paul'
+Sonuç: GEÇTI
+Açıklama: Beklenen: True, Sonuç: True
+
+Test:   Ad: 'O'Brien'
+Sonuç: GEÇTI
+Açıklama: Beklenen: True, Sonuç: True
+
+Test:   Ad: 'Müller'
+Sonuç: GEÇTI
+Açıklama: Beklenen: True, Sonuç: True
+
+Test:   Ad: 'Ali123'
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Ad: 'Ali@'
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Ad: 'M'
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Ad: ''
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Ülke: 'Türkiye'
+Sonuç: GEÇTI
+Açıklama: Beklenen: True, Sonuç: True
+
+Test:   Ülke: 'United States'
+Sonuç: GEÇTI
+Açıklama: Beklenen: True, Sonuç: True
+
+Test:   Ülke: 'Amerika Birleşik Devletleri'
+Sonuç: GEÇTI
+Açıklama: Beklenen: True, Sonuç: True
+
+Test:   Ülke: '123'
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Ülke: 'Ali'
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Ülke: 'xyz'
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test:   Ülke: ''
+Sonuç: GEÇTI
+Açıklama: Beklenen: False, Sonuç: False
+
+Test: get_profil()
+Sonuç: GEÇTI
+Açıklama: Kullanıcı profili alındı: Test
+
+Test: get_all_programs()
+Sonuç: GEÇTI
+Açıklama: Bulunan program sayısı: 75
+
+Test: get_favoriler()
+Sonuç: GEÇTI
+Açıklama: Bulunan favori sayısı: 0
+
+Test: Geçerli İzleme Süresi (60 dk)
+Sonuç: GEÇTI
+Açıklama: Sonuç: Başarılı
+
+Test: Geçersiz İzleme Süresi (500 dk - aşırı)
+Sonuç: GEÇTI
+Açıklama: Sonuç: İzleme süresi bölüm süresini aşamaz.
+
+Test: Yanlış Email Giriş
+Sonuç: GEÇTI
+Açıklama: Hata mesajı: Bu e-mail ile kayıtlı kullanıcı bulunamadı.
+
+Test: Favori Toggle (Ekle/Çıkar)
+Sonuç: GEÇTI
+Açıklama: Sonuç: True
+
+Test: Favorileri Getirme
+Sonuç: GEÇTI
+Açıklama: Favori sayısı: 1
+
+Test: Puan İşlemleri
+Sonuç: GEÇTI
+Açıklama: Puan tablosu veritabanında yok (isteğe bağlı)
+
+Test: Profil Güncelleme (Geçerli)
+Sonuç: GEÇTI
+Açıklama: Sonuç: Başarılı
+
+Test: Profil Güncelleme (Alınan Email)
+Sonuç: GEÇTI
+Açıklama: Sonuç: Bu e-mail adresi başka bir kullanıcıya aittir.

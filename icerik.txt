@@ -1,0 +1,232 @@
+
+
+
+NETFLIX BENZERİ İÇERİK YÖNETİM VE İZLEME PLATFORMU
+
+Projenin Amacı
+Bu projede öğrencilerden, Netflix benzeri içerik yönetim ve izleme platformu geliştirmeleri beklenmektedir.
+Uygulama masaüstü tabanlı olacak ve Nesneye Yönelik Programlama Uygulamaları kullanılarak geliştirilecektir. Veritabanı olarak MySQL, MSSQL, PostgreSQL kullanılabilir.
+Amaç, öğrencilerin:
+İlişkisel veritabanı tasarımını kavraması, 
+Çoktan çoğa ilişkileri doğru modelleyebilmesi, 
+Kullanıcı oturumu yönetebilmesi, 
+İçerik arama, filtreleme ve listeleme yapabilmesi, 
+İzleme geçmişi, puanlama ve öneri sistemi geliştirebilmesi, 
+CRUD işlemlerini uygulayabilmesi, 
+Yetkilendirme ve yönetici paneli mantığını öğrenebilmesidir.
+1. Kullanıcı Rolleri
+Sistemde iki farklı kullanıcı rolü bulunmalıdır:
+A. Normal Kullanıcı
+Normal kullanıcı şu işlemleri yapabilmelidir:
+Sisteme kayıt olabilir. 
+Sisteme giriş yapabilir. 
+Profil bilgilerini görüntüleyebilir ve güncelleyebilir. 
+İçerik arayabilir. 
+İçerik türüne göre filtreleme yapabilir. 
+Film veya dizi izleyebilir. 
+İzleme geçmişini görüntüleyebilir. 
+İçeriklere puan verebilir. 
+İçerikleri favorilerine ekleyebilir. 
+Dizilerde kaldığı bölümden devam edebilir. 
+Kendisine önerilen içerikleri görüntüleyebilir. 
+B. Yönetici Kullanıcı
+Yönetici kullanıcı şu işlemleri yapabilmelidir:
+Sisteme yönetici hesabı ile giriş yapabilir. 
+Yeni içerik ekleyebilir. 
+İçerik silebilir. 
+İçerik bilgilerini güncelleyebilir. 
+Yeni tür ekleyebilir. 
+Kullanıcıları listeleyebilir. 
+Kullanıcıların izleme istatistiklerini görebilir. 
+En çok izlenen içerikleri raporlayabilir. 
+En yüksek puan alan içerikleri listeleyebilir. 
+Proje yalnızca kullanıcı taraflı değil, aynı zamanda içerik yönetim sistemi mantığını da içerecektir.
+2. Arayüz İsterleri
+Uygulamada aşağıdaki arayüzlerin bulunması beklenmektedir.
+A. Kullanıcı Giriş Sayfası
+Kullanıcı sisteme e-mail ve şifre bilgileriyle giriş yapacaktır.
+Giriş ekranında şu alanlar bulunmalıdır:
+E-mail 
+Şifre 
+Giriş Yap butonu 
+Kayıt Ol butonu 
+Sitemde;
+Boş alan kontrolü yapılmalıdır. 
+Hatalı e-mail formatı kontrol edilmelidir. 
+Yanlış şifre girildiğinde kullanıcıya uyarı verilmelidir. 
+Aynı e-mail ile birden fazla kullanıcı kaydı yapılamamalıdır. 
+Kullanıcının rolüne göre farklı sayfaya yönlendirme yapılmalıdır. 
+B. Kullanıcı Kayıt Sayfası
+Kayıt sırasında kullanıcıdan şu bilgiler alınmalıdır:
+Ad 
+Soyad 
+E-mail 
+Şifre 
+Şifre tekrar 
+Doğum tarihi 
+Cinsiyet 
+Ülke 
+3 farklı favori tür seçimi 
+Kayıt sırasında yapılması gereken kontroller:
+E-mail daha önce kayıtlı mı? 
+Şifre ve şifre tekrar aynı mı? 
+Şifre en az 6 karakter mi? 
+Kullanıcı 3 farklı tür seçti mi? 
+Doğum tarihi bugünden büyük olamaz. 
+Boş alan bırakılmamalıdır. 
+Kullanıcı kayıt olduktan sonra seçtiği 3 türe göre, her türden en yüksek puanlı 2 içerik önerilmelidir. Toplamda kullanıcıya 6 öneri içerik gösterilmelidir.
+C. Kullanıcı Ana Sayfası
+Kullanıcı giriş yaptıktan sonra aşağıdaki işlemleri yapabilecektir:
+Tüm içerikleri listeleme 
+İçerik adına göre arama 
+Türe göre arama 
+İçerik tipine göre filtreleme: Film / Dizi 
+En yüksek puanlı içerikleri listeleme 
+En çok izlenen içerikleri listeleme 
+Favorilere ekleme 
+İzle butonu ile içerik izleme 
+İçeriğe puan verme 
+İzleme geçmişini görüntüleme 
+İçerik listesinde şu bilgiler gösterilmelidir:
+Program adı 
+Program tipi 
+Türleri 
+Bölüm sayısı 
+Program uzunluğu 
+Ortalama puanı 
+İzlenme sayısı 
+D. İçerik Detay Sayfası
+Her içeriğe tıklandığında detay sayfası açılmalıdır.
+Bu sayfada şu bilgiler bulunmalıdır:
+İçerik adı 
+Açıklama 
+Program tipi 
+Türleri 
+Bölüm sayısı 
+Bölüm uzunluğu 
+Yayın yılı 
+Ortalama puan 
+Toplam izlenme sayısı 
+Kullanıcının daha önce izleyip izlemediği 
+Kullanıcının verdiği puan 
+Favoriye ekle / favoriden çıkar butonu 
+İzle butonu 
+Dizi ise ayrıca:
+Bölüm seçme alanı 
+Kullanıcının kaldığı bölüm 
+Kaldığı süre 
+Kaldığı yerden devam et butonu 
+E. İzleme Ekranı
+İzleme ekranında şunlar bulunmalıdır:
+İçerik adı 
+İzlenen bölüm numarası 
+Toplam bölüm sayısı 
+İzleme süresi girme alanı 
+İzlemeyi tamamla butonu 
+Kaldığım yere kaydet butonu 
+Puan ver alanı 
+Örneğin kullanıcı bir dizinin 3. bölümünde 25. dakikada kaldıysa, bu bilgi veritabanına kaydedilmelidir. Kullanıcı uygulamayı kapatıp tekrar açtığında aynı içeriği seçerse:
+“3. bölüm 25. dakikadan devam etmek ister misiniz?”
+şeklinde bir mesaj gösterilmelidir.
+
+F. Profil Sayfası
+Kullanıcı kendi profil bilgilerini görüntüleyebilmeli ve güncelleyebilmelidir.
+Profil sayfasında:
+Ad 
+Soyad 
+E-mail 
+Doğum tarihi 
+Ülke 
+Şifre güncelleme alanı 
+Favori türler 
+Toplam izleme süresi 
+İzlenen içerik sayısı 
+Verilen ortalama puan 
+gösterilmelidir.
+G. Favoriler Sayfası
+Kullanıcı beğendiği içerikleri favorilerine ekleyebilmelidir.
+Favoriler sayfasında:
+Favoriye eklenen içerikler listelenmeli. 
+Kullanıcı favorilerinden içerik çıkarabilmeli. 
+Favori içerikleri türüne göre filtreleyebilmelidir. 
+H. İzleme Geçmişi Sayfası
+Kullanıcı daha önce izlediği içerikleri görebilmelidir.
+Bu sayfada:
+İçerik adı 
+İzleme tarihi 
+İzlenen bölüm 
+İzleme süresi 
+Verilen puan 
+Tamamlandı mı bilgisi 
+bulunmalıdır.
+I. Yönetici Paneli
+Yönetici şu işlemleri yapabilmelidir:
+İçerik Yönetimi
+Yeni program ekleme 
+Program silme 
+Program güncelleme 
+Programa birden fazla tür atama 
+Programın açıklamasını düzenleme 
+Programın yayın yılını düzenleme 
+Programın bölüm sayısını düzenleme 
+
+Tür Yönetimi
+Yeni tür ekleme 
+Tür güncelleme 
+Tür silme 
+Tür silinirken, o türe bağlı içerik olup olmadığı kontrol edilmelidir.
+Kullanıcı Yönetimi
+Kullanıcıları listeleme 
+Kullanıcı detaylarını görme 
+Kullanıcının izleme geçmişini görüntüleme 
+Kullanıcının toplam izleme süresini görüntüleme 
+Kullanıcıyı pasif hale getirme 
+Raporlama
+Yönetici aşağıdaki raporları görebilmelidir:
+En çok izlenen 10 içerik 
+En yüksek puanlı 10 içerik 
+En çok izlenen türler 
+En aktif kullanıcılar 
+Son 7 günde izlenen içerikler 
+Kullanıcı sayısı 
+Toplam izlenme sayısı 
+Toplam verilen puan sayısı 
+
+3.  Veritabanı Tasarımı
+Kullanılması gereken tablolar:
+Kullanici 
+Rol 
+Program 
+Tur 
+ProgramTur 
+KullaniciProgram 
+Favori 
+KullaniciTur 
+Bolum 
+OturumLog 
+IzlemeLog
+4. Ek Fonksiyonel İsterler
+A. Arama ve Filtreleme
+Kullanıcı içerikleri aşağıdaki kriterlere göre arayabilmelidir:
+Program adına göre 
+Türe göre 
+Program tipine göre 
+Yayın yılına göre 
+Minimum puana göre 
+En çok izlenenlere göre 
+Favorilere göre
+B. Öneri Sistemi
+Basit bir öneri sistemi eklenmelidir.
+Sistem kullanıcıya şu kriterlere göre öneri sunabilir:
+Kayıt sırasında seçtiği favori türler 
+Daha önce izlediği türler 
+Yüksek puan verdiği içeriklerin türleri 
+En çok izlenen içerikler 
+Benzer kullanıcıların izlediği içerikler
+C. Puanlama Sistemi
+Kullanıcı yalnızca izlediği içeriklere puan verebilmelidir.
+Kurallar:
+Puan 1 ile 10 arasında olmalıdır. 
+Kullanıcı aynı içeriğe birden fazla puan veremez. 
+Kullanıcı tekrar puan verirse eski puanı güncellenmelidir. 
+Programın ortalama puanı otomatik hesaplanmalıdır
